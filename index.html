@@ -1,184 +1,271 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MOD STORE - YouTube Premium Guide</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DMP ACADEMY - MOD STORE</title>
   <link rel="icon" href="https://i.postimg.cc/vBCbywPq/IMG-20250529-225008.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <meta name="description" content="Download YouTube Premium APK and MicroG settings. Created by Pathum Kalhara. MOD STORE guide.">
-  <meta name="keywords" content="YouTube Premium, MicroG, MOD APK, Pathum Kalhara, MOD STORE">
-  <meta name="author" content="Pathum Kalhara">
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: url('https://i.postimg.cc/fLhFsS2r/theme-bg.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #111;
-      margin: 0;
-      padding: 0;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-    header, footer {
-      background-color: rgba(255, 255, 255, 0.95);
-      color: #111;
-      text-align: center;
-      padding: 15px;
-    }
-    nav {
-      background-color: rgba(240, 240, 240, 0.95);
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    nav a {
-      color: #111;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #ff2c2c;
-    }
-    .container {
-      max-width: 850px;
-      margin: 40px auto;
-      padding: 25px;
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.15);
-    }
-    .logo {
-      text-align: center;
-    }
-    .logo img {
-      width: 180px;
-    }
-    .author {
-      text-align: center;
-      color: #111;
-      font-weight: bold;
-      font-size: 14px;
-    }
-    .divider {
-      text-align: center;
-      color: #000;
-      margin: 30px 0;
-      font-size: 22px;
-      font-weight: bold;
-    }
-    h2 {
-      color: #000;
-      text-align: center;
-      font-family: 'Rubik Mono One', sans-serif;
-      font-size: 24px;
-      margin-top: 40px;
-    }
-    .gif-center {
-      text-align: center;
-    }
-    .gif-center img {
-      width: 70%;
-      max-width: 400px;
-      border-radius: 12px;
-    }
-    .step-text {
-      font-size: 15px;
-      margin: 20px 0;
-      line-height: 1.8;
-      color: #111;
-    }
-    .download-section {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .download-label {
-      color: #000;
-      font-weight: bold;
-      font-size: 16px;
-      margin-bottom: 10px;
-      display: block;
-    }
-    .download-btn img {
-      width: 200px;
-      border-radius: 10px;
-      transition: transform 0.2s ease;
-    }
-    .download-btn img:hover {
-      transform: scale(1.05);
-    }
-    .telegram-btn {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background-color: #000;
-      color: #fff;
-      padding: 10px 15px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 0 8px rgba(0,0,0,0.3);
-      z-index: 999;
-    }
-    .dark-toggle {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background-color: #000;
-      color: #fff;
-      padding: 10px 14px;
-      border: none;
-      border-radius: 50%;
-      font-size: 20px;
-      cursor: pointer;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
-    footer a {
-      color: #000;
-      text-decoration: none;
-    }
-    footer a:hover {
-      color: #ff2c2c;
-    }
+    :root {
+      --primary: #01ffff;
+      --accent: #ffa400;
+      --bg-dark: #0e0e0e;
+      --bg-light: #f4f4f4;
+      --text-dark: #111;
+      --text-light: #eee;
+    }* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  overflow-x: hidden;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1c1c);
+  background-size: 400% 400%;
+  z-index: -1;
+  animation: backgroundAnimation 15s ease infinite;
+}
+
+@keyframes backgroundAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body.light::before {
+  display: none;
+}
+
+body.light {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+body.light header,
+body.light footer,
+body.light nav {
+  background-color: #ddd;
+  color: #111;
+}
+
+body.light a {
+  color: #111;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  animation: fadeDown 1s ease-in-out;
+}
+
+header h1 {
+  font-size: 30px;
+  font-family: 'Rubik Mono One', sans-serif;
+  color: var(--primary);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 12px;
+  background-color: rgba(20, 20, 20, 0.9);
+  animation: fadeIn 1.5s ease-in;
+}
+
+nav a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+.container {
+  max-width: 960px;
+  margin: 40px auto;
+  background-color: rgba(10, 10, 10, 0.8);
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+  animation: fadeUp 1.5s ease;
+}
+
+body.light .container {
+  background-color: #fff;
+  color: #111;
+}
+
+@keyframes fadeDown {
+  from { transform: translateY(-40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo img {
+  width: 150px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  animation: fadeIn 2s ease;
+}
+
+.author {
+  text-align: center;
+  font-weight: bold;
+  color: var(--primary);
+  margin-top: 10px;
+  animation: fadeIn 3s ease;
+}
+
+h2 {
+  text-align: center;
+  color: #e53935;
+  margin-top: 30px;
+  font-size: 22px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.gif-center {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.gif-center img {
+  width: 80%;
+  max-width: 400px;
+}
+
+.step-text {
+  margin-top: 15px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.download-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.download-label {
+  color: var(--accent);
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.download-btn img {
+  width: 200px;
+  transition: transform 0.3s;
+}
+
+.download-btn img:hover {
+  transform: scale(1.1);
+}
+
+.dark-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #222;
+  border: 2px solid #555;
+  color: var(--accent);
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999;
+  transition: 0.3s;
+}
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  padding: 12px;
+  font-size: 20px;
+  border-radius: 50%;
+  text-decoration: none;
+  z-index: 999;
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 80px;
+}
+
   </style>
 </head>
 <body>
   <header>
-    <h1>MOD STORE</h1>
-  </header>
-  <nav>
+    <h1>DMP ACADEMY - MOD STORE</h1>
+  </header>  <nav>
     <a href="#">Home</a>
     <a href="#step1">Step 1</a>
     <a href="#step2">Step 2</a>
     <a href="#contact">Contact</a>
-  </nav><a class="telegram-btn" href="https://wa.me/94714063108" target="_blank">📱 WhatsApp</a> <button class="dark-toggle" onclick="toggleDarkMode()">🌓</button>
+  </nav><button class="dark-toggle" onclick="toggleMode()" id="modeBtn">🌙</button> <a class="whatsapp-btn" href="https://wa.me/94714063108" target="_blank">📱</a>
 
   <div class="container">
     <div class="logo">
       <img src="https://i.postimg.cc/vBCbywPq/IMG-20250529-225008.png" alt="MOD Store Logo">
     </div>
-    <p class="author">⚙️ CREATED BY PATHUM KALHARA ⚙️</p>
-    <div class="divider">✦✧✦✧✦✧✦</div><h2 id="step1">STEP 1</h2>
+    <p class="author">⚙️ CREATED BY PATHUM KALHARA ⚙️</p><h2 id="step1">STEP 1</h2>
 <div class="gif-center">
-  <img src="https://i.postimg.cc/ZKccX3xW/output-onlinegiftools-1.gif" alt="Step 1 GIF">
+  <img src="https://i.postimg.cc/ZKccX3xW/output-onlinegiftools-1.gif" alt="Step 1">
 </div>
 <div class="step-text">
   🔰 First, download and install the MicroG settings Apk from the button below.<br>
   🔰 Then, add an email account of your choice to the app.
 </div>
 <div class="download-section">
-  <span class="download-label">❕ DOWNLOAD YT PREMIUM FOR MICROG SETTING ❕</span><br>
+  <span class="download-label">❕ DOWNLOAD YT PREMIUM FOR MICROG ❕</span><br>
   <a class="download-btn" href="https://www.mediafire.com/file/06s6akxenkrgdqw/microG-Services-Must-Installed-v0.3.1.241017-%2528Getmodsapk.com%2529.apk/file" target="_blank">
-    <img src="https://i.postimg.cc/DZGdV72S/output-onlinegiftools.gif" alt="Download Button">
+    <img src="https://i.postimg.cc/DZGdV72S/output-onlinegiftools.gif" alt="Download">
   </a>
 </div>
 
-<div class="divider">✦✧✦✧✦✧✦</div>
-
 <h2 id="step2">STEP 2</h2>
 <div class="gif-center">
-  <img src="https://i.postimg.cc/ZKccX3xW/output-onlinegiftools-1.gif" alt="Step 2 GIF">
+  <img src="https://i.postimg.cc/ZKccX3xW/output-onlinegiftools-1.gif" alt="Step 2">
 </div>
 <div class="step-text">
   🔰 Disable the YouTube app on your phone.<br>
@@ -187,18 +274,25 @@
   🔰 Sign in with the same email you used on MicroG.
 </div>
 <div class="download-section">
-  <span class="download-label">❕ DOWNLOAD FOR YOUTUBE PREMIUM APK ❕</span><br>
+  <span class="download-label">❕ DOWNLOAD YOUTUBE PREMIUM APK ❕</span><br>
   <a class="download-btn" href="https://www.mediafire.com/file/iod0vmtm3uwjkb8/YouTube-v20.16.38-MOD-OTR-%2528Getmodsapk.com%2529.apk/file" target="_blank">
-    <img src="https://i.postimg.cc/DZGdV72S/output-onlinegiftools.gif" alt="Download Button">
+    <img src="https://i.postimg.cc/DZGdV72S/output-onlinegiftools.gif" alt="Download">
   </a>
 </div>
 
   </div>  <footer id="contact">
-    <p>&copy; 2025 MOD STORE | Created by Pathum Kalhara | All rights reserved.</p>
-    <p>Contact: <a href="mailto:pathum@example.com">pathum@example.com</a></p>
+    <p>&copy; 2025 DMP ACADEMY | Created by Pathum Kalhara | All rights reserved.</p>
+    <p>Contact: <a href="mailto:kalharapathum831@gmail.com">kalharapathum831@gmail.com</a> | WhatsApp: <a href="https://wa.me/94714063108">+94 71 406 3108</a></p>
   </footer>  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
+    function toggleMode() {
+      const body = document.body;
+      const modeBtn = document.getElementById('modeBtn');
+      body.classList.toggle('light');
+      if (body.classList.contains('light')) {
+        modeBtn.innerHTML = '☀️';
+      } else {
+        modeBtn.innerHTML = '🌙';
+      }
     }
   </script></body>
-  </html>
+</html>
