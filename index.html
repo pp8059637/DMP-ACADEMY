@@ -9,23 +9,33 @@
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #000000 0%, #0f0f0f 100%);
+            background: black;
             color: #00ff99;
             font-family: 'Orbitron', sans-serif;
             overflow-x: hidden;
             scroll-behavior: smooth;
+            position: relative;
+        }
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
         }
 
         .container {
             width: 85%;
             margin: auto;
             padding: 20px 0;
+            position: relative;
+            z-index: 1;
         }
 
         header {
             text-align: center;
             padding: 3rem 0;
-            background: #000;
+            background: rgba(0, 0, 0, 0.8);
             border-bottom: 2px solid #00ff99;
             animation: glow 2s infinite alternate;
         }
@@ -65,7 +75,7 @@
         }
 
         section {
-            background: #111;
+            background: rgba(17, 17, 17, 0.9);
             margin: 20px 0;
             padding: 30px;
             border: 2px solid #00ff99;
@@ -186,7 +196,7 @@
         }
 
         footer {
-            background: #000;
+            background: rgba(0, 0, 0, 0.8);
             color: #00ff99;
             text-align: center;
             padding: 20px 0;
@@ -228,6 +238,8 @@
 </head>
 <body>
 
+<canvas id="matrix"></canvas>
+
 <header>
     <div class="container">
         <h1>DMP OFC</h1>
@@ -246,7 +258,7 @@
 <main class="container">
 
     <p align="center">
-      <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=3000&pause=1000&color=00FF00&width=435&lines=│WELCOME+TO+DMP+OFFICIAL+WEBSITE;│ENJOY+PREMIUM+FEATURES+AND+TOOLS;│STAY+TUNED+FOT+UPDATES..!" alt="Typing SVG" />
+      <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=3000&pause=1000&color=00FF00&width=435&lines=WELCOME+TO+DMP+OFFICIAL+WEBSITE;ENJOY+PREMIUM+FEATURES+AND+TOOLS;STAY+TUNED+FOR+UPDATES!" alt="Typing SVG" />
     </p>
 
     <section id="about">
@@ -310,6 +322,44 @@
 </footer>
 
 <script>
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+    }
+
+    resizeCanvas();
+
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = Array.from({ length: columns }).fill(1);
+
+    function draw() {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = '#00ff00';
+        ctx.font = `${fontSize}px monospace`;
+
+        for (let i = 0; i < drops.length; i++) {
+            const text = letters.charAt(Math.floor(Math.random() * letters.length));
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                drops[i] = 0;
+            }
+            drops[i]++;
+        }
+    }
+
+    setInterval(draw, 33);
+
+    window.addEventListener('resize', resizeCanvas);
+
+    // Smooth scroll
     document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', e => {
@@ -335,78 +385,3 @@
 
 </body>
 </html>
-
-<!DOCTYPE html><html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacking Background Animation</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background: black;
-            color: #00ff00;
-            font-family: 'Courier New', Courier, monospace;
-        }canvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: -1;
-    }
-
-    h1 {
-        color: #00ff00;
-        text-align: center;
-        margin-top: 50px;
-        font-size: 2rem;
-        text-shadow: 0 0 10px #00ff00;
-    }
-</style>
-
-</head>
-<body><h1>ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ᴍʏ ᴢᴏɴᴇ</h1>
-<canvas id="matrix"></canvas>
-
-<script>
-    const canvas = document.getElementById('matrix');
-    const ctx = canvas.getContext('2d');
-
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
-
-    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    const fontSize = 14;
-    const columns = canvas.width / fontSize;
-
-    const drops = Array.from({ length: columns }).fill(1);
-
-    function draw() {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        ctx.fillStyle = '#00ff00';
-        ctx.font = `${fontSize}px monospace`;
-
-        for (let i = 0; i < drops.length; i++) {
-            const text = letters.charAt(Math.floor(Math.random() * letters.length));
-            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                drops[i] = 0;
-            }
-            drops[i]++;
-        }
-    }
-
-    setInterval(draw, 33);
-
-    window.addEventListener('resize', () => {
-        canvas.height = window.innerHeight;
-        canvas.width = window.innerWidth;
-    });
-</script>
-
-</body>
-            </html>
