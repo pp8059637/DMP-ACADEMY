@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>MOD STORE</title>
+   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+   <style>
+      body {
+         font-family: 'Orbitron', sans-serif;
+         background-color: #0f0f0f;
+         color: #00ff99;
+         text-align: center;
+         padding: 20px;
+         overflow-x: hidden;
+         animation: fadeIn 3s ease-in-out;
+         transition: background-color 0.3s ease, color 0.3s ease;
+         position: relative;
+      }
+
+      @keyframes fadeIn {
+         from { opacity: 0; transform: translateY(-20px); }
+         to { opacity: 1; transform: translateY(0); }
+      }
+
+      .main-title-box {
+         display: inline-block;
+         padding: 10px 40px;
+         border: 2px solid #00ff99;
+         border-radius: 10px;
+         margin: 30px 0;
+         animation: glowBox 1.5s ease-in-out infinite alternate;
+      }
+
+      @keyframes glowBox {
+         from { box-shadow: 0 0 10px #00ff99; }
+         to { box-shadow: 0 0 25px #00ff99; }
+      }
+
+      .main-title {
+         font-size: 40px;
+         letter-spacing: 2px;
+         border-right: 2px solid #00ff99;
+         white-space: nowrap;
+         overflow: hidden;
+         width: 0;
+         animation: typing 3s steps(15) forwards, blink 0.8s step-end infinite;
+      }
+
+      @keyframes typing {
+         from { width: 0; }
+         to { width: 100%; }
+      }
+
+      @keyframes blink {
+         from, to { border-color: transparent; }
+         50% { border-color: #00ff99; }
+      }
+
+      .mod-box {
+         background: linear-gradient(135deg, #111 0%, #222 100%);
+         padding: 20px;
+         margin: 20px auto;
+         border-radius: 15px;
+         width: 80%;
+         max-width: 400px;
+         box-shadow: 0 0 20px #00ff99;
+         transition: transform 0.5s ease-in-out;
+         animation: fadeIn 3s ease-in-out;
+      }
+
+      .mod-box:hover {
+         transform: scale(1.05);
+         box-shadow: 0 0 30px #00ff99;
+      }
+
+      .mod-box h2 {
+         margin-bottom: 10px;
+      }
+
+      .download-btn {
+         padding: 10px 25px;
+         background-color: #00ff99;
+         color: black;
+         border: none;
+         border-radius: 8px;
+         cursor: pointer;
+         font-size: 16px;
+         box-shadow: 0 0 10px #00ff99;
+         transition: 0.3s;
+      }
+
+      .download-btn:hover {
+         background-color: #00cc77;
+         box-shadow: 0 0 20px #00ff99;
+      }
+
+      .search-container {
+         position: absolute;
+         top: 20px;
+         right: 20px;
+         display: flex;
+         align-items: center;
+         background: #222;
+         padding: 5px 10px;
+         border-radius: 20px;
+         box-shadow: 0 0 10px #00ff99;
+      }
+
+      .search-container input {
+         background: transparent;
+         border: none;
+         outline: none;
+         color: #00ff99;
+         font-size: 14px;
+         padding: 5px;
+      }
+
+      .search-container svg {
+         color: #00ff99;
+         cursor: pointer;
+      }
+
+      .thumbnail {
+         width: 100%;
+         max-width: 250px;
+         margin: 20px 0;
+         border-radius: 15px;
+         box-shadow: 0 0 10px rgba(0, 255, 153, 0.5);
+      }
+
+      .footer {
+         font-size: 12px;
+         margin-top: 50px;
+         color: #00ff99;
+         opacity: 0.7;
+      }
+
+      canvas {
+         position: fixed;
+         top: 0;
+         left: 0;
+         z-index: -1;
+      }
+   </style>
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div class="search-container">
+   <input type="text" id="searchInput" placeholder="Search Mods...">
+   <i data-lucide="search"></i>
+</div>
+
+<div class="main-title-box">
+   <h1 class="main-title">MOD STORE</h1>
+</div>
+
+<div class="mod-box" data-name="inshot apk premium unlocked">
+   <h2>InShot APK - Premium Unlocked</h2>
+   <p>Version: Latest | Size: 81.89MB</p>
+   <img src="https://i.postimg.cc/SsLjZrfV/Picsart-25-07-05-15-03-48-434.png" alt="InShot APK" class="thumbnail">
+   <a href="https://www.mediafire.com/file/d6libnfu3svabdl/InShot-v2.122.1486-MOD-OTR-%2528Getmodsapk.com%2529.apk/file" target="_blank">
+      <button class="download-btn">Download Now</button>
+   </a>
+</div>
+
+<div class="mod-box" data-name="telegram apk premium unlocked">
+   <h2>Telegram APK - Premium Unlocked</h2>
+   <p>Version: Latest | Size: 66MB</p>
+   <img src="https://i.postimg.cc/kgS1h6LD/Picsart-25-07-05-15-03-25-441.png" alt="Telegram APK" class="thumbnail">
+   <a href="https://www.mediafire.com/file/aq33u8fxj5m2zmx/com-mod-telegram-mod-apk-premium-unlocked-11-9-0-58372.apk/file" target="_blank">
+      <button class="download-btn">Download Now</button>
+   </a>
+</div>
+
+<div class="mod-box" data-name="yt music premium unlocked">
+   <h2>YT Music - Premium Unlocked</h2>
+   <p>Version: Latest | Size: 40MB</p>
+   <img src="https://i.postimg.cc/L8B9FX16/Picsart-25-07-05-15-05-05-337.png" alt="YT Music APK" class="thumbnail">
+   <a href="https://www.mediafire.com/file/mdxz3vxz3lzhouy/YT_Music_8.06.51_universal_mod_apkdone.apk/file" target="_blank">
+      <button class="download-btn">Download Now</button>
+   </a>
+</div>
+
+<div class="mod-box" data-name="youtube premium unlocked">
+   <h2>YouTube - Premium Unlocked</h2>
+   <p>Version: Latest | Size: 75MB</p>
+   <img src="https://i.postimg.cc/XJKcw9G6/Picsart-25-07-05-15-04-46-162.png" alt="YouTube APK" class="thumbnail">
+   <a href="https://www.mediafire.com/file/iod0vmtm3uwjkb8/YouTube-v20.16.38-MOD-OTR-%2528Getmodsapk.com%2529.apk/file" target="_blank">
+      <button class="download-btn">Download Now</button>
+   </a>
+</div>
+
+<div class="mod-box" data-name="capcut premium unlocked">
+   <h2>CapCut - Premium Unlocked</h2>
+   <p>Version: Latest | Size: 110MB</p>
+   <img src="https://i.postimg.cc/vZ7jZxhk/Picsart-25-07-05-15-04-23-244.png" alt="CapCut APK" class="thumbnail">
+   <a href="https://www.mediafire.com/file/9lssuau6hyibvz9/CapCut_v13.9.0_b13900600_%2528Pro%2529_Final_FIX.apk/file" target="_blank">
+      <button class="download-btn">Download Now</button>
+   </a>
+</div>
+
+<div class="footer">
+   Alright Received | OWNED BY PATHUM KALHARA
+</div>
+
+<script>
+   lucide.createIcons();
+
+   const searchInput = document.getElementById('searchInput');
+   const modBoxes = document.querySelectorAll('.mod-box');
+
+   searchInput.addEventListener('input', () => {
+      const searchValue = searchInput.value.toLowerCase();
+
+      modBoxes.forEach(box => {
+         const modName = box.getAttribute('data-name');
+         if (modName.includes(searchValue)) {
+            box.classList.remove('hidden');
+         } else {
+            box.classList.add('hidden');
+         }
+      });
+   });
+
+   const canvas = document.getElementById('matrix');
+   const ctx = canvas.getContext('2d');
+
+   function resizeCanvas() {
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+   }
+
+   resizeCanvas();
+
+   const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+   const fontSize = 14;
+   const columns = canvas.width / fontSize;
+   const drops = Array.from({ length: columns }).fill(1);
+
+   function draw() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#00ff00';
+      ctx.font = `${fontSize}px monospace`;
+
+      for (let i = 0; i < drops.length; i++) {
+         const text = letters.charAt(Math.floor(Math.random() * letters.length));
+         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+         if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+         }
+         drops[i]++;
+      }
+   }
+
+   setInterval(draw, 33);
+   window.addEventListener('resize', resizeCanvas);
+</script>
+
+</body>
+</html>
