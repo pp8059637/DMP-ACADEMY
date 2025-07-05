@@ -82,6 +82,7 @@
             border-radius: 8px;
             box-shadow: 0 0 20px #00ff99;
             animation: fadeIn 1.5s ease;
+            text-align: center;
         }
 
         h2 {
@@ -102,6 +103,25 @@
             left: 50%;
             bottom: -10px;
             transform: translateX(-50%);
+        }
+
+        .btn-mod {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #00ffff;
+            color: #000;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
+
+        .btn-mod:hover {
+            background: #00ff99;
+            color: #000;
+            transform: scale(1.05);
         }
 
         .skills-grid, .portfolio-grid {
@@ -246,6 +266,7 @@
         <p>Cyber Portfolio | Premium Tools | Mods Hub</p>
         <nav>
             <ul>
+                <li><a href="#modstore">MOD STORE</a></li>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
@@ -260,6 +281,12 @@
     <p align="center">
       <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=3000&pause=1000&color=00FF00&width=435&lines=WELCOME+TO+DMP+OFFICIAL+WEBSITE;ENJOY+PREMIUM+FEATURES+AND+TOOLS;STAY+TUNED+FOR+UPDATES!" alt="Typing SVG" />
     </p>
+
+    <section id="modstore">
+        <h2>MOD STORE</h2>
+        <p>Welcome to the official MOD STORE. Download Premium Tools, MOD APKs, and Exclusive Resources.</p>
+        <a href="https://modstore05.netlify.app/" target="_blank" class="btn-mod">VISIT SITE</a>
+    </section>
 
     <section id="about">
         <h2>About Me</h2>
@@ -359,7 +386,6 @@
 
     window.addEventListener('resize', resizeCanvas);
 
-    // Smooth scroll
     document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', e => {
